@@ -4,6 +4,11 @@
  */
 package com.dth.controller;
 
+import javax.persistence.Query;
+import javax.transaction.Transactional;
+import org.hibernate.Session;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,10 +19,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
  */
 @Controller
 public class IndexController {
-    @RequestMapping("/")
-    public String index(Model model ){
-        model.addAttribute("msg", "MY APP");
-    return "index";
-}
-}
 
+    @Autowired
+    private LocalSessionFactoryBean factory;
+
+    @RequestMapping("/")
+    @Transactional
+    public String index(Model model) {
+        Session s = factory.getObject().getCurrentSession();
+        Query q = s.createQuery("FROM USER ");
+        model.addAttribute("USER", q.getFirstResult());
+        return "index";
+    }
+}

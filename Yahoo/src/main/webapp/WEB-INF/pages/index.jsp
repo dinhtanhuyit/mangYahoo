@@ -13,6 +13,12 @@
     </head>
     <body>
         <h1>Hello     ssssssssssWorld!</h1>
-        <<h2>${msg}</h2>
+        <h2>${msg}</h2>
+        <ul>
+            <c:forEach iteams="${user}" var="u">
+                <<li>${u.id} - ${u.userName} - ${u.phone} </li>
+            </c:forEach>
+        </ul>
+
     </body>
 </html>
