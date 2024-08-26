@@ -24,7 +24,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
- * @author huy
+ * @author dinht
  */
 @Entity
 @Table(name = "share")

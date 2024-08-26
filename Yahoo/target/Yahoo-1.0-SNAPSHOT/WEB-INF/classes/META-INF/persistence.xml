@@ -14,6 +14,7 @@
     <class>com.dth.pojo.Post</class>
     <class>com.dth.pojo.LikePost</class>
     <class>com.dth.pojo.HashTag</class>
+    <class>com.dth.pojo.ResultAction</class>
     <exclude-unlisted-classes>false</exclude-unlisted-classes>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/charitydb?zeroDateTimeBehavior=CONVERT_TO_NULL"/>
