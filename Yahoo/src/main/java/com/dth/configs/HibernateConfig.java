@@ -16,13 +16,15 @@ import org.springframework.core.env.Environment;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  *
  * @author huy
  */
 @Configuration
-@PropertySource("classpath:database.properties")
+@PropertySource("classpath:databases.properties")
+@Transactional
 public class HibernateConfig {
 
     @Autowired
@@ -33,7 +35,7 @@ public class HibernateConfig {
         LocalSessionFactoryBean sessionFactory
                 = new LocalSessionFactoryBean();
         sessionFactory.setPackagesToScan(new String[]{
-            "com.dht.pojo"
+            "com.dth.pojo"
         });
         sessionFactory.setDataSource(dataSource());
         sessionFactory.setHibernateProperties(hibernateProperties());

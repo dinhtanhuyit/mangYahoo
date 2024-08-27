@@ -20,7 +20,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
- * @author huy
+ * @author dinht
  */
 @Entity
 @Table(name = "like_post")
