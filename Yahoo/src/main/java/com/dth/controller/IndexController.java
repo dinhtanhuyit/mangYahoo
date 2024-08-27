@@ -27,7 +27,7 @@ public class IndexController {
     @Transactional
     public String index(Model model) {
         Session s = factory.getObject().getCurrentSession();
-        Query q = s.createQuery("FROM USER ");
+        Query q = s.createQuery("FROM User ");
         model.addAttribute("USER", q.getFirstResult());
         return "index";
     }
